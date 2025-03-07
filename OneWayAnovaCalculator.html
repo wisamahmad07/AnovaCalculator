@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>One-Way ANOVA Calculator</title>
+    <link rel="icon" href="anovaLogo.png" />
+    <link rel="stylesheet" href="OneWayAnovaCalculator.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <h1>One-Way ANOVA Calculator</h1>
+        <p>
+          <a
+            href="/AnovaCalculator/TwoWayAnovaCalculator.html"
+            class="header-link"
+          >
+            Go to Two-Way ANOVA Calculator
+          </a>
+        </p>
+        <p class="subtitle">
+          Perform precise statistical analysis between multiple groups
+        </p>
+      </header>
+
+      <div class="input-section">
+        <div class="groups-container" id="groups-container">
+          <div class="group-input">
+            <label for="group1">Group 1:</label>
+            <input
+              type="text"
+              class="group-values"
+              id="group1"
+              placeholder="5,1,11,2,8"
+            />
+          </div>
+          <div class="group-input">
+            <label for="group2">Group 2:</label>
+            <input
+              type="text"
+              class="group-values"
+              id="group2"
+              placeholder="0,1,4,6,3"
+            />
+          </div>
+        </div>
+
+        <div class="button-group">
+          <button id="add-group" class="btn-secondary">+ Add Group</button>
+          <button id="remove-group" class="btn-secondary" disabled>
+            − Remove Group
+          </button>
+        </div>
+
+        <div class="button-group controls">
+          <select id="significance" class="significance-select">
+            <option value="0.01">α = 0.01</option>
+            <option value="0.05">α = 0.05</option>
+            <option value="0.10" selected>α = 0.10</option>
+          </select>
+          <button id="calculate" class="btn-primary">Calculate</button>
+          <button id="reset" class="btn-secondary">Reset</button>
+        </div>
+
+        <div class="error" id="error-msg"></div>
+      </div>
+
+      <div class="results-section" id="results">
+        <!-- Results content will be inserted here by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Add jStat library for accurate p-value calculation -->
+    <script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
+    <script src="OneWayAnovaCalculator.js"></script>
+  </body>
+</html>

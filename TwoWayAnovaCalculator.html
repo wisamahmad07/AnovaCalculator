@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Two-Way ANOVA Calculator</title>
+    <link rel="stylesheet" href="TwoWayAnovaCalculator.css" />
+    <link rel="icon" href="anovaLogo.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <h1>Two-Way ANOVA Calculator</h1>
+        <p>
+          <a
+            href="/AnovaCalculator/OneWayAnovaCalculator.html"
+            class="header-link"
+          >
+            Go to Two-Way ANOVA Calculator
+          </a>
+        </p>
+        <p>Analyze variance between two factors by entering your data below.</p>
+      </header>
+
+      <div class="container">
+        <div class="input-section">
+          <h3>Data Input</h3>
+          <p>
+            Enter values for each cell (comma-separated, e.g., 4,6,8). Minimum 2
+            rows and 2 columns required.
+          </p>
+          <div class="grid-controls">
+            <button onclick="addRow()" class="control-btn add-btn">
+              <span>+</span> Add Row
+            </button>
+            <button onclick="deleteRow()" class="control-btn delete-btn">
+              <span>−</span> Delete Row
+            </button>
+            <button onclick="addColumn()" class="control-btn add-btn">
+              <span>+</span> Add Column
+            </button>
+            <button onclick="deleteColumn()" class="control-btn delete-btn">
+              <span>−</span> Delete Column
+            </button>
+          </div>
+
+          <table id="inputGrid">
+            <tbody></tbody>
+          </table>
+
+          <button onclick="calculateANOVA()" class="calculate-btn">
+            Calculate ANOVA
+          </button>
+        </div>
+
+        <div class="results-section">
+          <h3>ANOVA Results</h3>
+          <table class="results">
+            <thead>
+              <tr>
+                <th>Source</th>
+                <th>DF</th>
+                <th>SS</th>
+                <th>MS</th>
+                <th>F-Stat</th>
+                <th>p-Value</th>
+              </tr>
+            </thead>
+            <tbody id="resultsBody">
+              <!-- Results will be populated here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="TwoWayAnovaCalculator.js"></script>
+  </body>
+</html>
